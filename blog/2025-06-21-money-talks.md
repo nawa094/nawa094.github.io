@@ -1,18 +1,17 @@
 ---
-title: "The Cost of Silence: Lessons from the South African Tech Industry"
+title: 'The Cost of Silence: Lessons from the South African Tech Industry'
 authors: nawam
 date: 2025-06-21
-description: "A personal reflection on navigating salary negotiations, bonus surprises, and compensation culture in South Africa’s tech scene."
+description: 'A personal reflection on navigating salary negotiations, bonus surprises, and compensation culture in South Africa’s tech scene.'
 sidebar_position: 3
 tags:
   [
-    "career",
-    "tech-south-africa",
-    "salary",
-    "bonuses",
-    "transparency",
-    "negotiation",
-    "mentorship",
+    'career',
+    'tech-south-africa',
+    'salary',
+    'transparency',
+    'negotiation',
+    'mentorship',
   ]
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: "Setting Up My Docusaurus Blog: Lessons Learned"
+title: 'Setting Up My Docusaurus Blog: Lessons Learned'
 authors: nawam
 date: 2025-06-15
-description: "From AI assistance to manual debugging - my journey configuring Docusaurus with GitHub Pages"
+description: 'From AI assistance to manual debugging - my journey configuring Docusaurus with GitHub Pages'
 sidebar_position: 3
 tags:
-  ["docusaurus", "github-pages", "webdev", "documentation", "troubleshooting"]
+  ['docusaurus', 'github-pages', 'webdev', 'documentation', 'troubleshooting']
 ---
 
 # Setting Up My Docusaurus Blog: Lessons Learned
@@ -111,10 +111,10 @@ jobs:
 ```javascript
 // docusaurus.config.js
 const config = {
-  url: "https://nawa094.github.io",
-  baseUrl: "/",
-  organizationName: "nawa094",
-  projectName: "nawa094.github.io",
+  url: 'https://nawa094.github.io',
+  baseUrl: '/',
+  organizationName: 'nawa094',
+  projectName: 'nawa094.github.io',
   trailingSlash: false,
   // ... other configs
 };
@@ -125,7 +125,6 @@ const config = {
 Now that the foundation is solid, I plan to:
 
 - [ ] Add a custom domain
-- [ ] Implement newsletter functionality
 - [ ] Create tutorial series
 
 **Pro Tip**: Bookmark these resources:

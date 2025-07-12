@@ -12,7 +12,7 @@
   --hero-button-ring: rgba(59, 130, 246, 0.4); /* blue-500 */
 }
 
-[data-theme="dark"] {
+[data-theme='dark'] {
   --hero-bg: linear-gradient(to bottom right, #111827, #1f2937, #374151);
   --hero-text: white;
   --hero-description: #a5b4fc;
@@ -31,7 +31,27 @@
   padding: 1.5rem;
   background: var(--hero-bg);
   color: var(--hero-text);
-  transition: background 0.6s ease, color 0.6s ease;
+  transition:
+    background 0.6s ease,
+    color 0.6s ease;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 80vh;
+    padding: 1rem;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 0.5rem;
+  }
 }
 
 .hero-overlay {
@@ -73,7 +93,9 @@
   background: var(--hero-button-bg);
   border-radius: 0.5rem;
   backdrop-filter: blur(6px);
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
   text-decoration: none;
   color: var(--hero-text);
 }
