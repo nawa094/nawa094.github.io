@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_blog_site=self.webpackChunkmy_blog_site||[]).push([[8146],{9328:t=>{t.exports=JSON.parse('{"metadata":{"permalink":"/blog","page":1,"postsPerPage":6,"totalPages":1,"totalCount":3,"blogDescription":"Insights, tutorials, and stories about coding, technology, and software craftsmanship.","blogTitle":"Nawa Mumbwe\'s Blog"}}')}}]);
