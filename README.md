@@ -4,7 +4,6 @@
 
 [![Built with Docusaurus](https://img.shields.io/badge/Built%20with-Docusaurus-2e8555?style=flat-square&logo=facebook)](https://docusaurus.io/)
 [![Deploy to GitHub Pages](https://github.com/nawa094/nawa094.github.io/actions/workflows/deploy.yml/badge.svg)](https://github.com/nawa094/nawa094.github.io/actions/workflows/deploy.yml)
-[![Deployed on GitHub Pages](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-222?style=flat-square&logo=github)](https://pages.github.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
 ## 🌟 About
