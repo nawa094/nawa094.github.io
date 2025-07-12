@@ -1,0 +1,89 @@
+.cv-download-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  border: none;
+  outline: none;
+}
+
+.cv-download-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: var(--ifm-color-primary-dark);
+}
+
+.cv-download-widget:focus {
+  outline: 2px solid var(--ifm-color-primary-light);
+  outline-offset: 2px;
+}
+
+.cv-download-widget:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.widget-icon {
+  transition: transform 0.2s ease;
+}
+
+.cv-download-widget:hover .widget-icon {
+  transform: scale(1.1);
+}
+
+/* Dark mode support */
+[data-theme='dark'] .cv-download-widget {
+  background: var(--ifm-color-primary-darker);
+  color: var(--ifm-color-content-inverse);
+}
+
+[data-theme='dark'] .cv-download-widget:hover {
+  background: var(--ifm-color-primary-darkest);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .cv-download-widget {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+  
+  .widget-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Ensure it doesn't interfere with other floating elements */
+.cv-download-widget {
+  pointer-events: auto;
+}
+
+/* Animation for initial load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cv-download-widget {
+  animation: fadeInUp 0.5s ease-out;
+}
