@@ -23,7 +23,7 @@ const CVDownloadWidget: React.FC = () => {
       title="Download my CV"
       role="button"
       tabIndex={0}
-      onKeyDown={(e) => {
+      onKeyDown={e => {
         if (e.key === 'Enter' || e.key === ' ') {
           handleDownload();
         }

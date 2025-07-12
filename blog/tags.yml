@@ -73,3 +73,38 @@ productivity:
   label: Productivity
   description: Tools and techniques for developer productivity
   permalink: /blog/tags/productivity
+
+ai:
+  label: Artificial Intelligence
+  description: AI developments, tools, and applications
+  permalink: /blog/tags/ai
+
+mcp:
+  label: Model Context Protocol
+  description: Posts about MCP servers and AI integration
+  permalink: /blog/tags/mcp
+
+anthropic:
+  label: Anthropic
+  description: Anthropic's AI models and technologies
+  permalink: /blog/tags/anthropic
+
+llm:
+  label: Large Language Models
+  description: LLM development and applications
+  permalink: /blog/tags/llm
+
+protocol:
+  label: Protocols
+  description: Technical protocols and standards
+  permalink: /blog/tags/protocol
+
+integration:
+  label: Integration
+  description: System integration patterns and practices
+  permalink: /blog/tags/integration
+
+south-africa:
+  label: South Africa
+  description: South African tech industry insights and solutions
+  permalink: /blog/tags/south-africa
