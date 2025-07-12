@@ -3,7 +3,8 @@ nawam:
   title: Software Engineer
   url: https://www.linkedin.com/in/nawam/
   image_url: https://github.com/nawa094.png
-  page: true
+  email: mumbwe94@gmail.com # Add this for RSS feeds (optional)
+  page: true # Enables the dedicated author page at /blog/authors/nawam
   socials:
-    linkedin: nawam
-    github: nawa094
+    linkedin: https://www.linkedin.com/in/nawam/
+    github: https://github.com/nawa094

@@ -23,3 +23,53 @@ troubleshooting:
   label: Troubleshooting
   description: Debugging stories and solution guides
   permalink: /blog/tags/troubleshooting
+
+career:
+  label: Career
+  description: Professional development and career advice
+  permalink: /blog/tags/career
+
+tech-south-africa:
+  label: South African Tech
+  description: Insights from the South African tech industry
+  permalink: /blog/tags/tech-south-africa
+
+salary:
+  label: Salary & Compensation
+  description: Discussions about salaries, bonuses, and compensation
+  permalink: /blog/tags/salary
+
+transparency:
+  label: Workplace Transparency
+  description: Posts about open communication and transparency at work
+  permalink: /blog/tags/transparency
+
+negotiation:
+  label: Negotiation
+  description: Tips and strategies for salary and role negotiations
+  permalink: /blog/tags/negotiation
+
+mentorship:
+  label: Mentorship
+  description: Giving and receiving mentorship in tech
+  permalink: /blog/tags/mentorship
+
+typescript:
+  label: TypeScript
+  description: TypeScript tips, tutorials, and best practices
+  permalink: /blog/tags/typescript
+
+react:
+  label: React
+  description: React development tutorials and insights
+  permalink: /blog/tags/react
+
+nodejs:
+  label: Node.js
+  description: Backend development with Node.js
+  permalink: /blog/tags/nodejs
+
+productivity:
+  label: Productivity
+  description: Tools and techniques for developer productivity
+  permalink: /blog/tags/productivity

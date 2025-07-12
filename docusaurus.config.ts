@@ -1,16 +1,16 @@
-import { themes as prismThemes } from "prism-react-renderer";
-import type { Config } from "@docusaurus/types";
-import type * as Preset from "@docusaurus/preset-classic";
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 // Replace these values:
-const organizationName = "nawa094"; // Or org name
-const projectName = "nawa094.github.io"; // Repo name
+const organizationName = 'nawa094'; // Or org name
+const projectName = 'nawa094.github.io'; // Repo name
 
 const config: Config = {
-  title: "Nawa Mumbwe",
-  tagline: "Writing code is cool",
-  favicon: "img/favicon.ico",
+  title: 'Nawa Mumbwe',
+  tagline: 'Writing code is cool',
+  favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -21,49 +21,62 @@ const config: Config = {
   url: `https://${organizationName}.github.io`,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: '/',
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName, // Usually your GitHub org/user name.
   projectName, // Usually your repo name.
-  deploymentBranch: "gh-pages",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
+  deploymentBranch: 'gh-pages',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
   trailingSlash: false,
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
     [
-      "classic",
+      'classic',
       {
         docs: {
-          sidebarPath: "./sidebars.ts",
+          sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/nawa094/nawa094.github.io",
+          editUrl: 'https://github.com/nawa094/nawa094.github.io',
         },
         blog: {
           showReadingTime: true,
           feedOptions: {
-            type: ["rss", "atom"],
+            type: ['rss', 'atom'],
             xslt: true,
+            title: "Nawa Mumbwe's Blog",
+            description:
+              'Insights, tutorials, and stories about coding, technology, and software craftsmanship.',
+            copyright: `Copyright © ${new Date().getFullYear()} Nawa Mumbwe.`,
           },
+          blogSidebarTitle: 'Recent posts',
+          blogSidebarCount: 10,
+          postsPerPage: 6,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/nawa094/nawa094.github.io",
+          editUrl: 'https://github.com/nawa094/nawa094.github.io/tree/main/',
           // Useful options to enforce blogging best practices
-          onInlineTags: "warn",
-          onInlineAuthors: "warn",
-          onUntruncatedBlogPosts: "warn",
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+          // Optional: specify custom paths (these are defaults)
+          authorsMapPath: 'authors.yml',
+          tagsBasePath: '/tags',
+          blogTitle: "Nawa Mumbwe's Blog",
+          blogDescription:
+            'Insights, tutorials, and stories about coding, technology, and software craftsmanship.',
         },
         theme: {
-          customCss: "./src/css/custom.css",
+          customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
@@ -71,13 +84,13 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: "img/social_card_preview.png",
+    image: 'img/social_card_preview.png',
 
     navbar: {
-      title: "NM",
+      title: 'NM',
       logo: {
-        alt: "My Site Logo",
-        src: "img/logo.png",
+        alt: 'My Site Logo',
+        src: 'img/logo.png',
       },
       items: [
         // {
@@ -86,21 +99,22 @@ const config: Config = {
         //   position: "left",
         //   label: "Tutorial",
         // },
-        { to: "/blog", label: "Blog", position: "left" },
+        { to: '/blog', label: 'Blog', position: 'left' },
+        { to: '/about', label: 'About', position: 'left' },
         {
-          href: "https://github.com/nawa094",
-          label: "GitHub",
-          position: "right",
+          href: 'https://github.com/nawa094',
+          label: 'GitHub',
+          position: 'right',
         },
         {
-          href: "https://www.linkedin.com/in/nawam/",
-          label: "LinkedIn",
-          position: "right",
+          href: 'https://www.linkedin.com/in/nawam/',
+          label: 'LinkedIn',
+          position: 'right',
         },
       ],
     },
     footer: {
-      style: "dark",
+      style: 'dark',
       copyright: `Copyright © ${new Date().getFullYear()} Made with ❤️ Built with Docusaurus.`,
     },
     prism: {

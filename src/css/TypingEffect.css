@@ -4,6 +4,20 @@
   color: #4f46e5; /* similar to Tailwind's indigo-600 */
 }
 
+/* Mobile responsive typography */
+@media (max-width: 768px) {
+  .typing-effect {
+    font-size: 1.75rem; /* Smaller on tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-effect {
+    font-size: 1.5rem; /* Even smaller on phones */
+    line-height: 1.3;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .typing-effect {
     color: #818cf8; /* similar to Tailwind's indigo-400 */
