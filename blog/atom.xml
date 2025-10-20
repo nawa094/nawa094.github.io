@@ -2,12 +2,157 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nawa094.github.io/blog</id>
     <title>Nawa Mumbwe's Blog</title>
-    <updated>2025-07-12T00:00:00.000Z</updated>
+    <updated>2025-10-20T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nawa094.github.io/blog"/>
     <subtitle>Insights, tutorials, and stories about coding, technology, and software craftsmanship.</subtitle>
     <icon>https://nawa094.github.io/img/favicon.ico</icon>
     <rights>Copyright © 2025 Nawa Mumbwe.</rights>
+    <entry>
+        <title type="html"><![CDATA[All You Need Is Trust]]></title>
+        <id>https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust</id>
+        <link href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust"/>
+        <updated>2025-10-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[A historical journey through the evolution of trust and security in software systems — from passwords to Zero Trust.]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction--why-trust-matters">Introduction – Why Trust Matters<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#introduction--why-trust-matters" class="hash-link" aria-label="Direct link to Introduction – Why Trust Matters" title="Direct link to Introduction – Why Trust Matters">​</a></h2>
+<p>When we talk about technology, we often mention speed, innovation, or convenience. But beneath every connected system lies something quieter yet far more essential: <strong>trust</strong>.</p>
+<p>In the early days of computing, trust was straightforward. Access to a shared mainframe might have been guarded by nothing more than a username and password. If you had the right credentials, you were in. But as systems became networked—first locally, then globally—this simple model began to crumble. How could one computer trust another? How could an organization trust a user halfway across the world?</p>
+<p>From those first plaintext passwords to today’s Zero Trust frameworks, the story of software security has been one of constant adaptation. This post takes you on that journey—exploring how each generation of developers faced new challenges, built new defenses, and redefined what it means for a system to be secure.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-early-days--passwords-and-the-birth-of-authentication">The Early Days – Passwords and the Birth of Authentication<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-early-days--passwords-and-the-birth-of-authentication" class="hash-link" aria-label="Direct link to The Early Days – Passwords and the Birth of Authentication" title="Direct link to The Early Days – Passwords and the Birth of Authentication">​</a></h2>
+<p>Long before multifactor prompts or biometric scans, the main question was simple:<br>
+<strong>Who’s sitting at the terminal?</strong></p>
+<p>In the 1960s, mainframes were shared among students and researchers. One of the earliest password systems appeared on MIT’s Compatible Time-Sharing System (CTSS) in 1961. Each user had a text password to access personal files. It was revolutionary—suddenly, multiple people could safely share one machine.</p>
+<p>But in 1962, researcher Allan Scherr discovered that the system stored passwords in plain text. He printed them to “borrow” extra computing time—making him arguably the first hacker. The lesson was clear: <strong>trust is fragile when secrets aren’t protected.</strong></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-password-arms-race">The Password Arms Race<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-password-arms-race" class="hash-link" aria-label="Direct link to The Password Arms Race" title="Direct link to The Password Arms Race">​</a></h3>
+<p>As computing advanced, so did password security:</p>
+<ul>
+<li><strong>1970s:</strong> Unix introduced <code>/etc/passwd</code>, storing hashed passwords via <code>crypt()</code>.</li>
+<li><strong>1980s:</strong> Developers began <em>salting</em> passwords to resist precomputed attacks.</li>
+<li><strong>1990s:</strong> Organizations enforced complexity and expiration policies—trading usability for perceived safety.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-birth-of-authentication-as-a-concept">The Birth of Authentication as a Concept<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-birth-of-authentication-as-a-concept" class="hash-link" aria-label="Direct link to The Birth of Authentication as a Concept" title="Direct link to The Birth of Authentication as a Concept">​</a></h3>
+<p>The password introduced a new idea: systems could both <strong>authenticate</strong> (verify identity) and <strong>authorize</strong> (control access). This distinction shaped everything that followed. Trust began at login—but it couldn’t end there.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-rise-of-the-web--cookies-sessions-and-state">The Rise of the Web – Cookies, Sessions, and State<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-rise-of-the-web--cookies-sessions-and-state" class="hash-link" aria-label="Direct link to The Rise of the Web – Cookies, Sessions, and State" title="Direct link to The Rise of the Web – Cookies, Sessions, and State">​</a></h2>
+<p>By the early 1990s, the internet had moved beyond universities into homes and businesses. Websites were no longer static—they needed to remember users. Yet HTTP was <em>stateless</em>; each request stood alone.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="cookies-the-webs-first-memory">Cookies: The Web’s First Memory<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#cookies-the-webs-first-memory" class="hash-link" aria-label="Direct link to Cookies: The Web’s First Memory" title="Direct link to Cookies: The Web’s First Memory">​</a></h3>
+<p>In 1994, Netscape engineer Lou Montulli introduced the <strong>HTTP cookie</strong>—a small piece of data that let websites remember users between requests.</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#393A34;background-color:#f6f8fa"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token plain">Set-Cookie: sessionId=abc123; HttpOnly; Secure</span><br></span></code></pre></div></div>
+<p>With that simple header, the web gained state. Shopping carts and dashboards became possible. But new risks followed:</p>
+<ul>
+<li>Cookies could be stolen or guessed.</li>
+<li>Many were transmitted over unencrypted HTTP.</li>
+</ul>
+<p>This drove the adoption of <strong>HTTPS</strong>, encrypting data and strengthening trust online.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-era-of-login-forms-and-server-sessions">The Era of Login Forms and Server Sessions<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-era-of-login-forms-and-server-sessions" class="hash-link" aria-label="Direct link to The Era of Login Forms and Server Sessions" title="Direct link to The Era of Login Forms and Server Sessions">​</a></h3>
+<p>By the late 1990s, a standard model emerged:</p>
+<ol>
+<li>The user logs in with a username and password.</li>
+<li>The server validates credentials and creates a session.</li>
+<li>A cookie stores the session ID for future requests.</li>
+</ol>
+<p>It worked—until the web scaled. Distributed servers, APIs, and mobile apps needed stateless authentication. This led to the next leap: <strong>federated identity</strong>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="federated-identity--trust-across-boundaries">Federated Identity – Trust Across Boundaries<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#federated-identity--trust-across-boundaries" class="hash-link" aria-label="Direct link to Federated Identity – Trust Across Boundaries" title="Direct link to Federated Identity – Trust Across Boundaries">​</a></h2>
+<p>As organizations grew, users faced dozens of logins for different systems. Password fatigue led to weaker security. The question evolved from <em>“Who are you?”</em> to <em>“Can another trusted system vouch for you?”</em></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="single-sign-on-one-identity-many-doors">Single Sign-On: One Identity, Many Doors<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#single-sign-on-one-identity-many-doors" class="hash-link" aria-label="Direct link to Single Sign-On: One Identity, Many Doors" title="Direct link to Single Sign-On: One Identity, Many Doors">​</a></h3>
+<p><strong>Single Sign-On (SSO)</strong> allowed users to authenticate once and access multiple systems.<br>
+<!-- -->Early implementations like <strong>Kerberos</strong> (from MIT in the 1980s) introduced a trusted third party that issued time-limited “tickets” proving identity.</p>
+<p>As the web matured, new standards emerged:</p>
+<ul>
+<li><strong>LDAP</strong> for centralized directories</li>
+<li><strong>SAML</strong> for enterprise SSO</li>
+<li><strong>OAuth</strong> and <strong>OpenID Connect (OIDC)</strong> for modern apps and APIs</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="oauth-and-the-era-of-delegated-trust">OAuth and the Era of Delegated Trust<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#oauth-and-the-era-of-delegated-trust" class="hash-link" aria-label="Direct link to OAuth and the Era of Delegated Trust" title="Direct link to OAuth and the Era of Delegated Trust">​</a></h3>
+<p>OAuth changed everything. Instead of giving an app your password, you let a trusted provider—like Google or GitHub—vouch for you.</p>
+<p>When you click <strong>“Login with Google”</strong>, you’re following a chain of digital trust:</p>
+<ol>
+<li>You authenticate with a trusted identity provider (IdP).</li>
+<li>The IdP issues a signed token verifying your identity.</li>
+<li>The application validates the token and grants access.</li>
+</ol>
+<p>This separation of roles made the web safer and more scalable.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-token-era--apis-jwts-and-microservices">The Token Era – APIs, JWTs, and Microservices<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-token-era--apis-jwts-and-microservices" class="hash-link" aria-label="Direct link to The Token Era – APIs, JWTs, and Microservices" title="Direct link to The Token Era – APIs, JWTs, and Microservices">​</a></h2>
+<p>As applications evolved into distributed systems and microservices, traditional server sessions became inefficient. APIs needed a way to prove identity <em>without storing state</em>.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="json-web-tokens-jwts-portable-trust">JSON Web Tokens (JWTs): Portable Trust<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#json-web-tokens-jwts-portable-trust" class="hash-link" aria-label="Direct link to JSON Web Tokens (JWTs): Portable Trust" title="Direct link to JSON Web Tokens (JWTs): Portable Trust">​</a></h3>
+<p>Defined by <a href="https://datatracker.ietf.org/doc/html/rfc7519" target="_blank" rel="noopener noreferrer">RFC 7519</a>, <strong>JWTs</strong> are lightweight, URL-safe tokens that represent claims between parties.</p>
+<p>A JWT consists of:</p>
+<ul>
+<li><strong>Header</strong> – algorithm and token type</li>
+<li><strong>Payload</strong> – claims like user ID, roles, expiry</li>
+<li><strong>Signature</strong> – proof that the token hasn’t been modified</li>
+</ul>
+<p>Because JWTs are self-contained and signed, they allow stateless authentication across services.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="apis-and-the-language-of-trust">APIs and the Language of Trust<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#apis-and-the-language-of-trust" class="hash-link" aria-label="Direct link to APIs and the Language of Trust" title="Direct link to APIs and the Language of Trust">​</a></h3>
+<p>Tokens became the universal language of APIs.<br>
+<!-- -->Every request could carry an <code>Authorization: Bearer &lt;token&gt;</code> header—proving who you are, what you can do, and for how long.</p>
+<p>But portability came with new risks:</p>
+<ul>
+<li>Tokens leaked in logs or URLs.</li>
+<li>Weak validation led to exploits.</li>
+<li>Long-lived tokens increased exposure.</li>
+</ul>
+<p>Tokens made trust portable, but also easier to lose—paving the way for a new mindset: <strong>Zero Trust</strong>.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-zero-trust-revolution">The Zero Trust Revolution<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-zero-trust-revolution" class="hash-link" aria-label="Direct link to The Zero Trust Revolution" title="Direct link to The Zero Trust Revolution">​</a></h2>
+<p>By the 2010s, traditional defenses—firewalls, VPNs, passwords—weren’t enough. Attackers no longer “broke in”; they logged in using stolen credentials.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-castle-and-moat-problem">The Castle-and-Moat Problem<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-castle-and-moat-problem" class="hash-link" aria-label="Direct link to The Castle-and-Moat Problem" title="Direct link to The Castle-and-Moat Problem">​</a></h3>
+<p>Enterprises had long followed a “castle-and-moat” model: keep the bad guys out and trust everyone inside. But as companies adopted cloud services and remote work, the perimeter disappeared.</p>
+<p>One compromised credential could give attackers unrestricted access.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="the-birth-of-zero-trust">The Birth of Zero Trust<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#the-birth-of-zero-trust" class="hash-link" aria-label="Direct link to The Birth of Zero Trust" title="Direct link to The Birth of Zero Trust">​</a></h3>
+<p>In 2010, John Kindervag of Forrester introduced <strong>Zero Trust Architecture (ZTA)</strong>: <em>Never trust, always verify.</em></p>
+<p>Later formalized by <a href="https://csrc.nist.gov/pubs/sp/800/207/final" target="_blank" rel="noopener noreferrer">NIST SP 800-207</a>, Zero Trust assumes every request is untrusted until proven otherwise.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="core-principles">Core Principles<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#core-principles" class="hash-link" aria-label="Direct link to Core Principles" title="Direct link to Core Principles">​</a></h3>
+<ul>
+<li><strong>Verify explicitly:</strong> Authenticate and authorize using all available signals (identity, device health, location, behavior).</li>
+<li><strong>Use least privilege:</strong> Grant only what’s necessary.</li>
+<li><strong>Assume breach:</strong> Design systems as if already compromised.</li>
+<li><strong>Continuous validation:</strong> Reassess trust dynamically, not just at login.</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="real-world-implementations">Real-World Implementations<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#real-world-implementations" class="hash-link" aria-label="Direct link to Real-World Implementations" title="Direct link to Real-World Implementations">​</a></h3>
+<ul>
+<li><strong>Google BeyondCorp:</strong> Eliminated VPNs, enforcing identity-based access for every request.</li>
+<li><strong>Microsoft Zero Trust Framework:</strong> Combines Azure AD Conditional Access, device compliance, and risk-based evaluation.</li>
+<li><strong>Cloudflare &amp; Okta:</strong> Offer Zero Trust access and identity services to organizations worldwide.</li>
+</ul>
+<p>Zero Trust isn’t a product—it’s a philosophy. It brings authentication, authorization, and encryption into every interaction.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="beyond-zero-trust--the-future-of-digital-trust">Beyond Zero Trust – The Future of Digital Trust<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#beyond-zero-trust--the-future-of-digital-trust" class="hash-link" aria-label="Direct link to Beyond Zero Trust – The Future of Digital Trust" title="Direct link to Beyond Zero Trust – The Future of Digital Trust">​</a></h2>
+<p>If history teaches us anything, it’s that trust constantly evolves. Each innovation brings new vulnerabilities and new ways to respond.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="decentralized-identity">Decentralized Identity<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#decentralized-identity" class="hash-link" aria-label="Direct link to Decentralized Identity" title="Direct link to Decentralized Identity">​</a></h3>
+<p>What if you owned your digital identity?<br>
+<strong>Decentralized Identifiers (DIDs)</strong> and <strong>Self-Sovereign Identity (SSI)</strong>, standardized by the W3C, envision a world where users hold verifiable credentials—like digital passports—that can be cryptographically validated without relying on a central authority.</p>
+<p>This could redefine privacy, compliance, and data ownership, placing control back in the hands of individuals.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="hardware-and-behavioral-trust">Hardware and Behavioral Trust<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#hardware-and-behavioral-trust" class="hash-link" aria-label="Direct link to Hardware and Behavioral Trust" title="Direct link to Hardware and Behavioral Trust">​</a></h3>
+<p>Hardware security modules, <strong>TPMs</strong>, and <strong>Secure Enclaves</strong> protect keys at the physical level.<br>
+<!-- -->At the same time, AI-driven <strong>behavioral trust</strong> systems continuously evaluate user actions—typing patterns, geolocation, device behavior—to detect anomalies in real time.</p>
+<p>Authentication is no longer a single event. It’s a continuous conversation between user, device, and system.</p>
+<hr>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="closing-thoughts">Closing Thoughts<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#closing-thoughts" class="hash-link" aria-label="Direct link to Closing Thoughts" title="Direct link to Closing Thoughts">​</a></h2>
+<p>From plaintext passwords on mainframes to Zero Trust in the cloud, one truth endures: <strong>trust is never static</strong>.<br>
+<!-- -->It’s negotiated, verified, and renewed with every interaction.</p>
+<p>Every system we build reflects what we choose to trust—and how we choose to prove it.<br>
+<!-- -->As we move toward decentralized, passwordless, and adaptive systems, one principle remains timeless:</p>
+<blockquote>
+<p>All you need is trust — but only if you can prove it.</p>
+</blockquote>
+<blockquote>
+<p>Note: This article was written with the assistance of AI tools to help organize research, generate drafts, and refine content. The ideas and final text were reviewed and edited by me, the author.</p>
+</blockquote>]]></content>
+        <author>
+            <name>Nawa Mumbwe</name>
+            <email>mumbwe94@gmail.com</email>
+            <uri>https://www.linkedin.com/in/nawam/</uri>
+        </author>
+        <category label="security" term="security"/>
+        <category label="authentication" term="authentication"/>
+        <category label="trust" term="trust"/>
+        <category label="authorization" term="authorization"/>
+        <category label="zero-trust" term="zero-trust"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Building SpecCraft: An AI-Powered CLI for Requirements Analysis]]></title>
         <id>https://nawa094.github.io/blog/2025/07/12/building-speccraft-ai-powered-cli-for-requirements-analysis</id>
