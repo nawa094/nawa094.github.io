@@ -87,3 +87,189 @@
 .cv-download-widget {
   animation: fadeInUp 0.5s ease-out;
 }
+
+/* Add to existing CVDownloadWidget.css */
+
+.cv-download-widget-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.cv-download-widget {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.cv-download-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background: var(--ifm-color-primary-dark);
+}
+
+.cv-download-widget:focus {
+  outline: 2px solid var(--ifm-color-primary-light);
+  outline-offset: 2px;
+}
+
+.cv-download-widget:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.widget-icon {
+  transition: transform 0.2s ease;
+}
+
+.cv-download-widget:hover .widget-icon {
+  transform: scale(1.1);
+}
+
+/* Dark mode support */
+[data-theme='dark'] .cv-download-widget {
+  background: var(--ifm-color-primary-darker);
+  color: var(--ifm-color-content-inverse);
+}
+
+[data-theme='dark'] .cv-download-widget:hover {
+  background: var(--ifm-color-primary-darkest);
+}
+
+/* Download Menu */
+.cv-download-menu {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  min-width: 180px;
+  animation: slideInUp 0.2s ease-out;
+  z-index: 1001;
+}
+
+[data-theme='dark'] .cv-download-menu {
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.menu-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 8px;
+  padding: 0 8px;
+}
+
+[data-theme='dark'] .menu-title {
+  color: var(--ifm-color-emphasis-300);
+}
+
+.menu-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--ifm-color-emphasis-800);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.menu-option:hover {
+  background: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .menu-option {
+  color: var(--ifm-color-emphasis-200);
+}
+
+[data-theme='dark'] .menu-option:hover {
+  background: var(--ifm-color-emphasis-800);
+}
+
+.menu-icon {
+  flex-shrink: 0;
+}
+
+.menu-option span {
+  flex-grow: 1;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .cv-download-widget-container {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .cv-download-widget {
+    width: 48px;
+    height: 48px;
+  }
+
+  .widget-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .cv-download-menu {
+    min-width: 160px;
+    bottom: 60px;
+    right: 0;
+  }
+
+  .menu-option {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Ensure it doesn't interfere with other floating elements */
+.cv-download-widget {
+  pointer-events: auto;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
