@@ -4,11 +4,107 @@
         <title>Nawa Mumbwe's Blog</title>
         <link>https://nawa094.github.io/blog</link>
         <description>Insights, tutorials, and stories about coding, technology, and software craftsmanship.</description>
-        <lastBuildDate>Mon, 20 Oct 2025 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 28 Dec 2025 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2025 Nawa Mumbwe.</copyright>
+        <item>
+            <title><![CDATA[From Specs to Context: Learning from the Infinite Software Crisis]]></title>
+            <link>https://nawa094.github.io/blog/2025/12/28/specs-to-context</link>
+            <guid>https://nawa094.github.io/blog/2025/12/28/specs-to-context</guid>
+            <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
+            <description><![CDATA[How Research, Planning, and Implementation help engineers stay grounded as AI accelerates code generation.]]></description>
+            <content:encoded><![CDATA[<p>Jake Nations, a senior engineer at Netflix, started a recent talk with a confession that probably hit close to home for a lot of us.</p>
+<blockquote>
+<p>"I've shipped code I didn't quite understand. Generated it, tested it, deployed it. Couldn't explain how it worked."</p>
+</blockquote>
+<p>We've all been there. But what makes this moment different isn't that engineers have gotten careless. It's that the <strong>speed at which we can now produce software has fundamentally shifted</strong>. AI lets us generate code almost as fast as we can describe it, and our ability to understand it is struggling to keep up.</p>
+<p>Jake calls this the <strong>infinite software crisis</strong>. And the name fits.</p>
+<p><img decoding="async" loading="lazy" alt="A developer sits at the intersection of two paths: one labeled &amp;quot;Easy&amp;quot; leading to a tangled mess of code, the other labeled &amp;quot;Simple&amp;quot; leading to clean, modular architecture." src="https://nawa094.github.io/assets/images/infinite-code-hero-d0bac5353468e459a136d2e0e7722832.png" width="1536" height="1024" class="img_ev3q">
+<em>Image: The choice we face: easy complexity or simple clarity.</em></p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-infinite-software-crisis">The Infinite Software Crisis<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#the-infinite-software-crisis" class="hash-link" aria-label="Direct link to The Infinite Software Crisis" title="Direct link to The Infinite Software Crisis">​</a></h2>
+<p>The idea of a software crisis isn't new. Jake points back to the late 1960s, when pioneers like Edsger Dijkstra noticed a pattern: as computing power exploded, our appetite for software grew just as fast. Every leap forward solved one problem while quietly planting the seeds for the next.</p>
+<p>We've watched this cycle repeat:</p>
+<table><thead><tr><th>Era</th><th>Innovation</th><th>New Capability</th><th>New Complexity</th></tr></thead><tbody><tr><td>1970s</td><td>C Language</td><td>Write bigger systems</td><td>Manual memory management, pointer errors</td></tr><tr><td>1990s</td><td>Object-Oriented Programming</td><td>Model real-world domains</td><td>Inheritance hell, over-engineering</td></tr><tr><td>2000s</td><td>Agile &amp; DevOps</td><td>Ship faster, continuously</td><td>Technical debt accumulation, "move fast and break things"</td></tr><tr><td>2020s</td><td><strong>AI Code Generation</strong></td><td><strong>Generate at thought-speed</strong></td><td><strong>Understanding can't keep up</strong></td></tr></tbody></table>
+<p>AI changes the game on this pattern. <strong>For the first time, the bottleneck isn't how fast we can <em>write</em> code. The bottleneck is how well we understand what we're shipping</strong>, and how safely we can change it when things inevitably break.</p>
+<p>As Jake puts it, large production systems fail in weird and unexpected ways. When they do, you need a solid mental model to debug them. Generating code faster doesn't reduce that need, it amplifies it.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-dumb-zone-and-the-trap-of-easy">The Dumb Zone and the Trap of "Easy"<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#the-dumb-zone-and-the-trap-of-easy" class="hash-link" aria-label="Direct link to The Dumb Zone and the Trap of &quot;Easy&quot;" title="Direct link to The Dumb Zone and the Trap of &quot;Easy&quot;">​</a></h2>
+<p>While Jake frames the problem in terms of comprehension, developer Dex Horthy attacks it from a more technical angle. He points to a hard constraint: the <strong>context window</strong>. As your chat with an AI agent grows longer and more cluttered, its performance tanks. Dex calls this the <strong>dumb zone</strong>; a state where the model, drowning in noise and past mistakes, becomes unreliable.</p>
+<blockquote>
+<p>"Around the 40% line is where you're going to start to see some diminishing returns... If you have too many MCPs in your coding agent you are doing all your work in the dumb zone and you're never going to get good results."</p>
+</blockquote>
+<p>Standard AI workflows often live in this zone. You ask an agent to fix something in a sprawling, old codebase. It searches, reads, and tries things, slowly polluting its context with code, errors, and your frustrated corrections. The conversation becomes a messy transcript of trial and error. The model's most likely "next step" often becomes another wrong turn, because its entire context is a log of previous failures.</p>
+<p>This technical failure mirrors Jake's philosophical warning. He leans on Rich Hickey's classic talk: <strong>easy is not simple</strong>. Easy is what's close at hand, the quick install, the copied snippet, the AI-generated block. Simple is about clean design, where each part has one job and clear boundaries.</p>
+<p>AI, in Jake's words, is the ultimate easy button. It removes almost all the friction from the easy path. The danger Dex highlights is that this easy path is also a direct route into the dumb zone. We choose what's easy, the AI obliges, and complexity piles up faster than we can make sense of it, both in our code and inside the agent's crumbling context.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="engineers-as-custodians-of-context">Engineers as Custodians of Context<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#engineers-as-custodians-of-context" class="hash-link" aria-label="Direct link to Engineers as Custodians of Context" title="Direct link to Engineers as Custodians of Context">​</a></h2>
+<p>This is where both thinkers land on the same crucial idea: engineers need to become <strong>custodians of context</strong>.</p>
+<p>AI is an incredible pattern matcher. Show it a codebase, and it will faithfully replicate whatever patterns it sees. The critical flaw? <strong>Not all patterns are good</strong>. To a model, a five-year-old authorization hack looks identical to a core business rule. Technical debt is just another pattern to copy and preserve.</p>
+<p>Humans can tell the difference, but only if we slow down to think. The AI can't do this thinking for us. As Dex states bluntly:</p>
+<blockquote>
+<p>"Do not outsource the thinking. AI cannot replace thinking. It can only amplify the thinking you have done or the lack of thinking you have done."</p>
+</blockquote>
+<p>The fix isn't to feed the AI more raw code, but to feed it better, curated information. Jake calls this <strong>context compression</strong>. At Netflix, instead of dumping millions of tokens of Java into a prompt, he'd feed it architecture diagrams, key interfaces, and clear requirements. Millions of tokens became a few thousand words of intent.</p>
+<p>Dex's parallel concept is <strong>intentional compaction</strong>. It's the practice of actively distilling a messy context window; full of file searches, half-baked ideas, and build errors, into a clean, truthful summary before you start fresh. The goal is to stay in the <strong>smart zone</strong>, where the model has just enough clean, correct information to be useful.</p>
+<p>What comes out of this compression and compaction isn't magic. It's something more disciplined: a <strong>specification</strong>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-rpi-workflow-a-discipline-for-the-smart-zone">The RPI Workflow: A Discipline for the Smart Zone<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#the-rpi-workflow-a-discipline-for-the-smart-zone" class="hash-link" aria-label="Direct link to The RPI Workflow: A Discipline for the Smart Zone" title="Direct link to The RPI Workflow: A Discipline for the Smart Zone">​</a></h2>
+<p>This is where theory turns into practice. Both Horthy and Nations advocate for a structured workflow, often dubbed <strong>Research, Plan, Implement (RPI)</strong>. At its core, it's a system for context engineering.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="phase-1-research-mapping-reality">Phase 1: Research (Mapping Reality)<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#phase-1-research-mapping-reality" class="hash-link" aria-label="Direct link to Phase 1: Research (Mapping Reality)" title="Direct link to Phase 1: Research (Mapping Reality)">​</a></h3>
+<p>The goal here is to build an accurate, compressed map of the existing system. This is the agent's onboarding. As Dex frames it, it's about answering: <em>What are the exact files and line numbers that matter?</em> The output is a research artifa, a snapshot of truth pulled from the code itself.</p>
+<p><strong>Key takeaway:</strong> Jake stresses this is an iterative, human-validated process. Catching a misunderstanding here is the highest-leverage move you can make. It stops the agent from charging off in the wrong direction.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="phase-2-planning-compressing-intent">Phase 2: Planning (Compressing Intent)<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#phase-2-planning-compressing-intent" class="hash-link" aria-label="Direct link to Phase 2: Planning (Compressing Intent)" title="Direct link to Phase 2: Planning (Compressing Intent)">​</a></h3>
+<p>With good research in hand, planning is where human thinking gets crystallized. The engineer, not the AI, defines the concrete steps: file names, data flows, function signatures, the order of operations. Dex pushes for plans so explicit they include actual code snippets, creating "paint-by-numbers" instructions.</p>
+<p>This plan file is the ultimate compression of intent. It enables what Dex calls <strong>mental alignment</strong>, teams can review the <em>plan</em> for sound architecture long before they have to review thousands of lines of generated code.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="phase-3-implementation-focused-execution">Phase 3: Implementation (Focused Execution)<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#phase-3-implementation-focused-execution" class="hash-link" aria-label="Direct link to Phase 3: Implementation (Focused Execution)" title="Direct link to Phase 3: Implementation (Focused Execution)">​</a></h3>
+<p>Only now does major code generation begin. The AI is no longer asked to think or explore. It's asked to execute a clear plan. The context stays clean and focused, avoiding the spiraling mess of a long, meandering chat. The implementation becomes a verification step against the blueprint.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="the-naming-trap-a-brief-aside">The Naming Trap (A Brief Aside)<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#the-naming-trap-a-brief-aside" class="hash-link" aria-label="Direct link to The Naming Trap (A Brief Aside)" title="Direct link to The Naming Trap (A Brief Aside)">​</a></h2>
+<p>This approach goes by many names, context engineering, spec-driven development, RPI. Dex warns about <strong>semantic diffusion</strong>, a concept from Martin Fowler where a good term gets stretched to mean everything and therefore nothing.</p>
+<blockquote>
+<p>"We come up with a good term with a good definition and then everybody gets excited and everybody starts meaning it to mean a hundred things to a 100 different people and it becomes useless."</p>
+</blockquote>
+<p>The name isn't what matters. The <strong>discipline</strong> is what matters: keeping humans in the loop at the highest-leverage points, maintaining clean context, and never outsourcing the thinking.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="earning-understanding-the-human-in-the-loop">Earning Understanding: The Human in the Loop<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#earning-understanding-the-human-in-the-loop" class="hash-link" aria-label="Direct link to Earning Understanding: The Human in the Loop" title="Direct link to Earning Understanding: The Human in the Loop">​</a></h2>
+<p>This process isn't a shortcut around understanding; it's a scaffold for achieving it. Both speakers are clear that some understanding has to be earned the hard way.</p>
+<p>Jake tells the story of an authorization refactor that AI repeatedly failed at. The only way forward was a manual, painful migration done by hand. That grunt work uncovered hidden constraints no AI analysis could see. That hard-won understanding <em>then</em> became the seed for effective AI-assisted work.</p>
+<p>Dex shares a similar limit when trying to extract Hadoop from a complex Java codebase. Eventually, they had to "go back to the whiteboard." The AI couldn't untangle the essential from the accidental; that synthesis required a human.</p>
+<p><strong>RPI and context engineering don't eliminate thinking. They force it to the front</strong>, making it the central, reviewable artifact of the work. As Dex observes, the real challenge isn't the coding agent, it's adapting your team's workflow and collaboration to a world where 99% of code is AI-generated, while ensuring 100% of the understanding remains human.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="what-changes-and-what-does-not">What Changes and What Does Not<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#what-changes-and-what-does-not" class="hash-link" aria-label="Direct link to What Changes and What Does Not" title="Direct link to What Changes and What Does Not">​</a></h2>
+<p>AI changes almost everything about <em>how</em> we write code. It does not change <em>why</em> software fails.</p>
+<p>Failures still come from misunderstood requirements, tangled responsibilities, and systems that have become black boxes. Fred Brooks was right decades ago: the hard part has never been the mechanics of coding.</p>
+<p>The real shift is in where engineers must focus our scarce attention:</p>
+<ul>
+<li><strong>Less on typing</strong>, more on thinking</li>
+<li><strong>Less on syntax</strong>, more on architecture</li>
+<li><strong>Less on writing</strong>, more on curating context</li>
+</ul>
+<p>We're moving from being authors of code to being <strong>architects of understanding</strong>.</p>
+<p>The question isn't whether we'll use AI. That ship has sailed.</p>
+<p><strong>The question, as Jake leaves us with, is whether we'll still understand our own systems when AI is writing most of the code.</strong></p>
+<p>The answer, as Dex Horthy's work shows, depends entirely on whether we build the discipline, the context engineering, to keep our minds, and our models, firmly in the smart zone.</p>
+<hr>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="references">References<a href="https://nawa094.github.io/blog/2025/12/28/specs-to-context#references" class="hash-link" aria-label="Direct link to References" title="Direct link to References">​</a></h3>
+<ol>
+<li>
+<p><strong>No Vibes Allowed: Solving Hard Problems in Complex Codebases</strong> – Dex Horthy, HumanLayer. <a href="https://www.youtube.com/watch?v=rmvDxxNubIg" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></p>
+</li>
+<li>
+<p><strong>The Infinite Software Crisis</strong> – Jake Nations, Netflix. <a href="https://www.youtube.com/watch?v=eIoohUmYpGI" target="_blank" rel="noopener noreferrer">Watch on YouTube</a></p>
+</li>
+<li>
+<p><strong>Semantic Diffusion</strong> – Martin Fowler. <a href="https://martinfowler.com/bliki/SemanticDiffusion.html" target="_blank" rel="noopener noreferrer">Read on martinfowler.com</a></p>
+</li>
+<li>
+<p><strong>Effective harnesses for long-running agents</strong> – Anthropic. <a href="https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents" target="_blank" rel="noopener noreferrer">Read on anthropic.com</a></p>
+</li>
+</ol>]]></content:encoded>
+            <author>mumbwe94@gmail.com (Nawa Mumbwe)</author>
+            <category>Artificial Intelligence</category>
+            <category>software-engineering</category>
+            <category>context-engineering</category>
+            <category>ai-agents</category>
+            <category>software-architecture</category>
+            <category>engineering-leadership</category>
+        </item>
         <item>
             <title><![CDATA[All You Need Is Trust]]></title>
             <link>https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust</link>
@@ -17,6 +113,9 @@
             <description><![CDATA[A historical journey through the evolution of trust and security in software systems — from passwords to Zero Trust.]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="introduction--why-trust-matters">Introduction – Why Trust Matters<a href="https://nawa094.github.io/blog/2025/10/20/all-you-need-is-trust#introduction--why-trust-matters" class="hash-link" aria-label="Direct link to Introduction – Why Trust Matters" title="Direct link to Introduction – Why Trust Matters">​</a></h2>
 <p>When we talk about technology, we often mention speed, innovation, or convenience. But beneath every connected system lies something quieter yet far more essential: <strong>trust</strong>.</p>
+<blockquote>
+<p>Note: This article was written with the assistance of AI tools to help organize research, generate drafts, and refine content. The ideas and final text were reviewed and edited by me, the author.</p>
+</blockquote>
 <p>In the early days of computing, trust was straightforward. Access to a shared mainframe might have been guarded by nothing more than a username and password. If you had the right credentials, you were in. But as systems became networked—first locally, then globally—this simple model began to crumble. How could one computer trust another? How could an organization trust a user halfway across the world?</p>
 <p>From those first plaintext passwords to today’s Zero Trust frameworks, the story of software security has been one of constant adaptation. This post takes you on that journey—exploring how each generation of developers faced new challenges, built new defenses, and redefined what it means for a system to be secure.</p>
 <hr>
@@ -139,9 +238,6 @@
 <!-- -->As we move toward decentralized, passwordless, and adaptive systems, one principle remains timeless:</p>
 <blockquote>
 <p>All you need is trust — but only if you can prove it.</p>
-</blockquote>
-<blockquote>
-<p>Note: This article was written with the assistance of AI tools to help organize research, generate drafts, and refine content. The ideas and final text were reviewed and edited by me, the author.</p>
 </blockquote>]]></content:encoded>
             <author>mumbwe94@gmail.com (Nawa Mumbwe)</author>
             <category>security</category>
@@ -437,9 +533,7 @@
 <p>As Dhanji R. Prasanna, CTO at Block, puts it: "Open technologies like the Model Context Protocol are the bridges that connect AI to real-world applications, ensuring innovation is accessible, transparent, and rooted in collaboration."</p>
 <p>The future of AI isn't just about smarter models - it's about AI that can actually connect to and work with the world around us. MCP is making that future possible, one connection at a time.</p>
 <hr>
-<p><strong>Want to learn more?</strong> Check out the <a href="https://modelcontextprotocol.io/introduction" target="_blank" rel="noopener noreferrer">official MCP documentation</a> and start experimenting with connecting AI to your own data sources.</p>
-<p><strong>Interested in building MCP solutions for South African businesses?</strong> I'd love to hear your ideas - feel free to reach out!</p>
-<p>Wrap up your thoughts here.</p>]]></content:encoded>
+<p><strong>Want to learn more?</strong> Check out the <a href="https://modelcontextprotocol.io/introduction" target="_blank" rel="noopener noreferrer">official MCP documentation</a> and start experimenting with connecting AI to your own data sources.</p>]]></content:encoded>
             <author>mumbwe94@gmail.com (Nawa Mumbwe)</author>
             <category>Artificial Intelligence</category>
             <category>Model Context Protocol</category>
