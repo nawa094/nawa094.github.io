@@ -13,6 +13,8 @@ When we talk about technology, we often mention speed, innovation, or convenienc
 
 <!-- truncate -->
 
+> Note: This article was written with the assistance of AI tools to help organize research, generate drafts, and refine content. The ideas and final text were reviewed and edited by me, the author.
+
 In the early days of computing, trust was straightforward. Access to a shared mainframe might have been guarded by nothing more than a username and password. If you had the right credentials, you were in. But as systems became networked—first locally, then globally—this simple model began to crumble. How could one computer trust another? How could an organization trust a user halfway across the world?
 
 From those first plaintext passwords to today’s Zero Trust frameworks, the story of software security has been one of constant adaptation. This post takes you on that journey—exploring how each generation of developers faced new challenges, built new defenses, and redefined what it means for a system to be secure.
@@ -195,5 +197,3 @@ Every system we build reflects what we choose to trust—and how we choose to pr
 As we move toward decentralized, passwordless, and adaptive systems, one principle remains timeless:
 
 > All you need is trust — but only if you can prove it.
-
-> Note: This article was written with the assistance of AI tools to help organize research, generate drafts, and refine content. The ideas and final text were reviewed and edited by me, the author.
